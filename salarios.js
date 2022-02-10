@@ -1,25 +1,25 @@
-const cuba = [];
-cuba.push({
+const cubita = [];
+cubita.push({
     name: "Alberto",
     salary: 190,
 });
-cuba.push({
+cubita.push({
     name: "Rodolfo",
     salary: 780,
 });
-cuba.push({
+cubita.push({
     name: "Miguel",
     salary: 2000,
 });
-cuba.push({
+cubita.push({
     name: "Raul",
     salary: 100,
 });
-cuba.push({
+cubita.push({
     name: "Alfonso",
     salary: 1000,
 });
-cuba.push({
+cubita.push({
     name: "Jose",
     salary: 450,
 });
