@@ -15,7 +15,14 @@ const salriosCubaSorted = salariosCuba.sort(
 function esPar(numero){
     return (numero % 2 ===0); 
 }
-
+function calcularMediaAritmetica(lista){
+    let sumaLista = 0;
+    for(let i = 0; i < lista.length; i++){
+        sumaLista = sumaLista + lista[i];
+    }
+    const promedioLista = sumaLista / lista.length;
+    return promedioLista;
+}
 function medianaSalarios(lista){
     const mitad = parseInt(lista.length / 2);
     if(esPar(lista.length)){
