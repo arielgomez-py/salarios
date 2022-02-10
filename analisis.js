@@ -23,21 +23,28 @@ cubita.push({
     name: "Jose",
     salary: 450,
 });
+cubita.push({
+    name: "Frank",
+    salary: 1450,
+});
+cubita.push({
+    name: "Anducho",
+    salary: 10000,
+});
+cubita.push({
+    name: "Ariel",
+    salary: 10000,
+});
+cubita.push({
+    name: "Chicho",
+    salary: 100020,
+});
+cubita.push({
+    name: "Chicho",
+    salary: 100040,
+});
 
-const salariosCuba = cubita.map(
-function (persona){
-        return persona.salary;
-    }
-);
-
-//Ordenar los salarios
-const salariosCubaSorted = salariosCuba.sort(
-    function (salaryA, salaryB){
-        return salaryA - salaryB;
-    }
-);
-
-//Determinar si el arreglo tiene una catidad par o impar de elementos(salarios)
+//Helpers(funciones que no son parte de la logica del analisis pero es necesario usarlas)
 function esPar(numero){
     return (numero % 2 ===0); 
 }
@@ -49,6 +56,7 @@ function calcularMediaAritmetica(lista){
     const promedioLista = sumaLista / lista.length;
     return promedioLista;
 }
+//Calculadora de medianas
 function medianaSalarios(lista){
     const mitad = parseInt(lista.length / 2);
     if(esPar(lista.length)){
@@ -63,7 +71,29 @@ function medianaSalarios(lista){
     }
 }
 
+//Mediana general
+const salariosCuba = cubita.map(
+function (persona){
+        return persona.salary;
+    }
+);
+
+//Ordenar los salarios
+const salariosCubaSorted = salariosCuba.sort(
+    function (salaryA, salaryB){
+        return salaryA - salaryB;
+    }
+);
+
 const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
+
+//Mediana del top 10%
+const spliceStart = (salariosCubaSorted.length * 90) / 100;
+const spliceCount = salariosCubaSorted.length - spliceStart;
+
+const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
+
+const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 
 console.log({
     medianaGeneralCuba,
