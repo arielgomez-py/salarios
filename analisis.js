@@ -29,19 +29,20 @@ cubita.push({
 });
 cubita.push({
     name: "Anducho",
-    salary: 10000,
+    salary: 1100,
 });
-cubita.push({
-    name: "Ariel",
-    salary: 10000,
-});
+
 cubita.push({
     name: "Chicho",
-    salary: 100020,
+    salary: 120,
 });
 cubita.push({
-    name: "Chicho",
-    salary: 100040,
+    name: "Ajo",
+    salary: 13000,
+});
+cubita.push({
+    name: "Aji",
+    salary: 13500,
 });
 
 //Helpers(funciones que no son parte de la logica del analisis pero es necesario usarlas)
@@ -98,4 +99,6 @@ const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 console.log({
     medianaGeneralCuba,
     medianaTop10Cuba,
+    salariosCuba,
+    salariosCubaSorted,
 });
