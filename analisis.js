@@ -20,16 +20,36 @@ const cubita = [
         salary: 280,
     },
     {
-        name: "Juan",
-        salary: 280,
+        name: "Joan",
+        salary: 2880,
     },
     {
-        name: "Juan",
-        salary: 280,
+        name: "Casuelo",
+        salary: 480,
     },
     {
-        name: "Juan",
-        salary: 280,
+        name: "Murillo",
+        salary: 2000,
+    },
+    {
+        name: "Salfuman",
+        salary: 1280,
+    },
+    {
+        name: "Kiko",
+        salary: 1220,
+    },
+    {
+        name: "Salfuman",
+        salary: 560,
+    },
+    {
+        name: "Mojino",
+        salary: 806,
+    },
+    {
+        name: "Salfuman",
+        salary: 1780,
     },
 
 ];
@@ -68,6 +88,7 @@ function (persona){
         return persona.salary;
     }
 );
+console.log(salariosCuba);
 
 //Ordenar los salarios
 const salariosCubaSorted = salariosCuba.sort(
@@ -75,7 +96,7 @@ const salariosCubaSorted = salariosCuba.sort(
         return salaryA - salaryB;
     }
 );
-
+console.log(salariosCubaSorted);
 const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
 
 //Mediana del top 10%
@@ -90,4 +111,5 @@ console.log({
     medianaGeneralCuba,
     salariosCubaTop10,
     medianaTop10Cuba,
+    
 });
