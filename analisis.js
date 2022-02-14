@@ -1,49 +1,27 @@
-const cubita = [];
-cubita.push({
-    name: "Alberto",
-    salary: 190,
-});
-cubita.push({
-    name: "Rodolfo",
-    salary: 780,
-});
-cubita.push({
-    name: "Miguel",
-    salary: 2000,
-});
-cubita.push({
-    name: "Raul",
-    salary: 100,
-});
-cubita.push({
-    name: "Alfonso",
-    salary: 1000,
-});
-cubita.push({
-    name: "Jose",
-    salary: 450,
-});
-cubita.push({
-    name: "Frank",
-    salary: 1450,
-});
-cubita.push({
-    name: "Anducho",
-    salary: 1100,
-});
+const cubita = [
+    {
+        name: "Alberto",
+        salary: 190,
+    },
+    {
+        name: "Pepe",
+        salary: 1900,
+    },
+    {
+        name: "Alfonso",
+        salary: 190,
+    },
+    {
+        name: "Anducho",
+        salary: 500,
+    },
+    {
+        name: "Juan",
+        salary: 280,
+    },
 
-cubita.push({
-    name: "Chicho",
-    salary: 120,
-});
-cubita.push({
-    name: "Ajo",
-    salary: 13000,
-});
-cubita.push({
-    name: "Aji",
-    salary: 13500,
-});
+];
+
 
 //Helpers(funciones que no son parte de la logica del analisis pero es necesario usarlas)
 function esPar(numero){
@@ -89,10 +67,10 @@ const salariosCubaSorted = salariosCuba.sort(
 const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
 
 //Mediana del top 10%
-const spliceStart = (salariosCubaSorted.length * 90) / 100;
-const spliceCount = salariosCubaSorted.length - spliceStart;
+const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
+const spliceCount = salariosCuba.length - spliceStart;
 
-const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
+const salariosCubaTop10 = salariosCuba.splice(spliceStart, spliceCount);
 
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 
@@ -100,5 +78,5 @@ console.log({
     medianaGeneralCuba,
     medianaTop10Cuba,
     salariosCuba,
-    salariosCubaSorted,
+    salariosCubaTop10,
 });
