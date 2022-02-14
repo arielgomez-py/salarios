@@ -5,15 +5,27 @@ const cubita = [
     },
     {
         name: "Pepe",
-        salary: 1900,
+        salary: 190,
     },
     {
         name: "Alfonso",
-        salary: 190,
+        salary: 160,
     },
     {
         name: "Anducho",
         salary: 500,
+    },
+    {
+        name: "Juan",
+        salary: 280,
+    },
+    {
+        name: "Juan",
+        salary: 280,
+    },
+    {
+        name: "Juan",
+        salary: 280,
     },
     {
         name: "Juan",
@@ -25,7 +37,7 @@ const cubita = [
 
 //Helpers(funciones que no son parte de la logica del analisis pero es necesario usarlas)
 function esPar(numero){
-    return (numero % 2 ===0); 
+    return (numero % 2 === 0); 
 }
 function calcularMediaAritmetica(lista){
     let sumaLista = 0;
@@ -70,13 +82,12 @@ const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
 const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
 const spliceCount = salariosCuba.length - spliceStart;
 
-const salariosCubaTop10 = salariosCuba.splice(spliceStart, spliceCount);
+const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
 
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 
 console.log({
     medianaGeneralCuba,
-    medianaTop10Cuba,
-    salariosCuba,
     salariosCubaTop10,
+    medianaTop10Cuba,
 });
