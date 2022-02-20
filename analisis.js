@@ -40,7 +40,7 @@ const cubita = [
         salary: 1220,
     },
     {
-        name: "Salfuman",
+        name: "Salao",
         salary: 560,
     },
     {
@@ -48,12 +48,11 @@ const cubita = [
         salary: 806,
     },
     {
-        name: "Salfuman",
+        name: "Fruta",
         salary: 1780,
     },
 
 ];
-
 
 //Helpers(funciones que no son parte de la logica del analisis pero es necesario usarlas)
 function esPar(numero){
@@ -88,7 +87,6 @@ function (persona){
         return persona.salary;
     }
 );
-console.log(salariosCuba);
 
 //Ordenar los salarios
 const salariosCubaSorted = salariosCuba.sort(
@@ -96,10 +94,12 @@ const salariosCubaSorted = salariosCuba.sort(
         return salaryA - salaryB;
     }
 );
-console.log(salariosCubaSorted);
 const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
 
-//Mediana del top 10%
+//Media aritmetica
+var salarioPromedio = calcularMediaAritmetica(salariosCuba);
+
+//Mediana del top 10% salarios mas altos
 const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
 const spliceCount = salariosCuba.length - spliceStart;
 
@@ -107,9 +107,8 @@ const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
 
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 
-console.log({
-    medianaGeneralCuba,
-    salariosCubaTop10,
-    medianaTop10Cuba,
-    
-});
+//Top 10% de salararios mas bajos
+
+
+console.log("El 10 porciento de los salarios mas altos es: " + salariosCubaTop10);
+console.log("El salario promedio es: " + Math.round(salarioPromedio) );
