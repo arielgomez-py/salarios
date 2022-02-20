@@ -107,8 +107,27 @@ const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
 
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 
+//Creando de nuevo la lista de salarios, debido a que el metodo splice lo modifica
+var salariosCubaDeNuevo = cubita.map(
+    function (persona){
+            return persona.salary;
+        }
+    );
+//Ordenar lalista de salarios
+var salariosCubaDeNuevo = salariosCubaDeNuevo.sort(
+    function(salaryA, salaryB){
+        return salaryA - salaryB;
+    }
+);
+console.log("Salarios: "+ salariosCubaDeNuevo);
+    
 //Top 10% de salararios mas bajos
+const spliceSalariosCubaDeNuevo_Start = Math.round(salariosCubaDeNuevo.length * 0.1);
+const spliceSalariosCubaDeNuevo_Cont = salariosCubaDeNuevo.length - spliceSalariosCubaDeNuevo_Start;
+const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(spliceSalariosCubaDeNuevo_Start, spliceSalariosCubaDeNuevo_Cont);
 
 
+console.log(spliceSalariosCubaDeNuevo_Start);
 console.log("El 10 porciento de los salarios mas altos es: " + salariosCubaTop10);
 console.log("El salario promedio es: " + Math.round(salarioPromedio) );
+console.log("El 10 porciento de los slarios mas bajos es: " + top_10_Salarios_Bajos);
