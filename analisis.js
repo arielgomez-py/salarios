@@ -5,7 +5,7 @@ const cubita = [
     },
     {
         name: "Pepe",
-        salary: 190,
+        salary: 1956,
     },
     {
         name: "Alfonso",
