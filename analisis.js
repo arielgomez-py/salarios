@@ -40,7 +40,7 @@ const cubita = [
         salary: 1220,
     },
     {
-        name: "Salfuman",
+        name: "Salao",
         salary: 560,
     },
     {
@@ -48,12 +48,11 @@ const cubita = [
         salary: 806,
     },
     {
-        name: "Salfuman",
+        name: "Fruta",
         salary: 1780,
     },
 
 ];
-
 
 //Helpers(funciones que no son parte de la logica del analisis pero es necesario usarlas)
 function esPar(numero){
@@ -95,39 +94,40 @@ const salariosCubaSorted = salariosCuba.sort(
         return salaryA - salaryB;
     }
 );
-/*const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);*/
+const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
 
-//Mediana del top 10%
-/*const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
+//Media aritmetica
+var salarioPromedio = calcularMediaAritmetica(salariosCuba);
+
+//Mediana del top 10% salarios mas altos
+const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
 const spliceCount = salariosCuba.length - spliceStart;
 
 const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
 
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
 
-console.log({
-    medianaGeneralCuba,
-    salariosCubaTop10,
-    medianaTop10Cuba,
+//Creando de nuevo la lista de salarios, debido a que el metodo splice lo modifica
+var salariosCubaDeNuevo = cubita.map(
+    function (persona){
+            return persona.salary;
+        }
+    );
+//Ordenar lalista de salarios
+var salariosCubaDeNuevo = salariosCubaDeNuevo.sort(
+    function(salaryA, salaryB){
+        return salaryA - salaryB;
+    }
+);
+console.log("Salarios: "+ salariosCubaDeNuevo);
     
-});*/
-function Onclick_Calcular_Mediana_Button(){
-    const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
-    const resultMediana = document.getElementById("ResultadoMediana");
-    resultMediana.innerText = "La mediana de los slarios es: " +  medianaGeneralCuba; 
-};
+//Top 10% de salararios mas bajos
+const spliceSalariosCubaDeNuevo_Start = Math.round(salariosCubaDeNuevo.length * 0.1);
+const spliceSalariosCubaDeNuevo_Cont = salariosCubaDeNuevo.length - spliceSalariosCubaDeNuevo_Start;
+const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(spliceSalariosCubaDeNuevo_Start, spliceSalariosCubaDeNuevo_Cont);
 
-function Onclick_Top_10_Salarios_Mas_Altos(){
-    const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
-    const spliceCount = salariosCuba.length - spliceStart;
-    const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
-    const result_Salarios_Mas_Altos = document.getElementById("Top_10_Salarios_Altos");
-    result_Salarios_Mas_Altos.innerText = "El top 10 de los salarios mas altos es: " + salariosCubaTop10;
-};
 
-function Onclick_Mediana_Top10(){
-    const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
-
-    const result_Mediana_10_Salarios_Mas_Altos = document.getElementById(Top_10_Salarios_Altos);
-   
-};
+console.log(spliceSalariosCubaDeNuevo_Start);
+console.log("El 10 porciento de los salarios mas altos es: " + salariosCubaTop10);
+console.log("El salario promedio es: " + Math.round(salarioPromedio) );
+console.log("El 10 porciento de los slarios mas bajos es: " + top_10_Salarios_Bajos);
