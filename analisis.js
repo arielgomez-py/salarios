@@ -88,7 +88,6 @@ function (persona){
         return persona.salary;
     }
 );
-console.log(salariosCuba);
 
 //Ordenar los salarios
 const salariosCubaSorted = salariosCuba.sort(
@@ -96,11 +95,10 @@ const salariosCubaSorted = salariosCuba.sort(
         return salaryA - salaryB;
     }
 );
-console.log(salariosCubaSorted);
-const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
+/*const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);*/
 
 //Mediana del top 10%
-const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
+/*const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
 const spliceCount = salariosCuba.length - spliceStart;
 
 const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
@@ -112,4 +110,24 @@ console.log({
     salariosCubaTop10,
     medianaTop10Cuba,
     
-});
+});*/
+function Onclick_Calcular_Mediana_Button(){
+    const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
+    const resultMediana = document.getElementById("ResultadoMediana");
+    resultMediana.innerText = "La mediana de los slarios es: " +  medianaGeneralCuba; 
+};
+
+function Onclick_Top_10_Salarios_Mas_Altos(){
+    const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
+    const spliceCount = salariosCuba.length - spliceStart;
+    const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
+    const result_Salarios_Mas_Altos = document.getElementById("Top_10_Salarios_Altos");
+    result_Salarios_Mas_Altos.innerText = "El top 10 de los salarios mas altos es: " + salariosCubaTop10;
+};
+
+function Onclick_Mediana_Top10(){
+    const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
+
+    const result_Mediana_10_Salarios_Mas_Altos = document.getElementById(Top_10_Salarios_Altos);
+   
+};
