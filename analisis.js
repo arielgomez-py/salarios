@@ -117,13 +117,6 @@ function Onclick_Top_10_Salarios_Altos(){
     resultTop10SalariosAltos.innerText = "El top 10 de los salarios mas altos es: " + salariosCubaTop10;
 }
 
-//Mediana del Top 10 de salarios mas altos
-function Onclick_Mediana_Top_10_Altos(){
-    const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
-    const resultMedianaTop10SalariosAltos = document.getElementById("Top_10_Salarios_Altos");
-    resultMedianaTop10SalariosAltos.innerText = "La mediana del top 10 de salarios altos es: " + medianaTop10Cuba;
-}
-
 //Top 10 de salararios mas bajos
 function Onclick_Calcular_Top10_Bajos(){
     //Creando de nuevo la lista de salarios, debido a que el metodo splice lo modifica
