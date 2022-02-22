@@ -3,30 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: repeat(3,200px);
     grid-template-areas: "header header header"
                          "main main main"
                          "footer footer footer";
 }
 header{
     grid-area: header;
-    background-color: antiquewhite;
 }
 main{
     grid-area: main;
-    background-color: aqua;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.analisis-salarios{
+   background-color: aliceblue;
+   
 }
 
-.analisis-salarios{
-    background-color: azure;
-}
 footer{
     grid-area: footer;
-    background-color: bisque;
+  
 }
