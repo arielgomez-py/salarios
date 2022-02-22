@@ -122,8 +122,8 @@ var salariosCubaDeNuevo = salariosCubaDeNuevo.sort(
     
 //Top 10% de salararios mas bajos
 const spliceSalariosCubaDeNuevo_Count = Math.round(salariosCubaDeNuevo.length * 0.1);
-
-const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(0,spliceSalariosCubaDeNuevo_Count);
+const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(-salariosCubaDeNuevo.length, spliceSalariosCubaDeNuevo_Count);//se coloco
+//el signo menos delante del elemento de icio para empezar desde el primer elemento del arreglo
 
 console.log("El 10 porciento de los salarios mas altos es: " + salariosCubaTop10);
 console.log("El salario promedio es: " + Math.round(salarioPromedio) );
