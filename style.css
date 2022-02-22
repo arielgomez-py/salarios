@@ -10,7 +10,7 @@ html{
 body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3,200px);
+    grid-template-rows: repeat(3,1fr);
     grid-template-areas: "header header header"
                          "main main main"
                          "footer footer footer";
@@ -25,17 +25,27 @@ main{
     align-items: center;
 }
 h2{
-    margin: 10px;
+    margin-left: 10px;
     font-size: 2.2rem;
 }
 .analisis-salarios{
-   background-color: aliceblue;  
+   margin-top: 20px; 
+   background-color: aliceblue; 
+   box-shadow: 5px 5px 5px gray    ;
 }
 button{
     width: 20rem;
     height: 3rem;
     font-size: 1.6rem;
-    margin: 20px;
+    margin: 10px;
+    background-color: rgb(122, 253, 253);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px grey;
+}
+p{
+    font-size: 1.6rem;
+    margin-left: 10px;
 }
 footer{
     grid-area: footer;
