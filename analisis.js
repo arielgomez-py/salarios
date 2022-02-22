@@ -81,38 +81,46 @@ function medianaSalarios(lista){
     }
 }
 
-//Mediana general
+//Crear lista de salarios
 const salariosCuba = cubita.map(
 function (persona){
         return persona.salary;
     }
 );
 
-//Ordenar los salarios
+//Ordenar la lista de los salarios
 const salariosCubaSorted = salariosCuba.sort(
     function (salaryA, salaryB){
         return salaryA - salaryB;
     }
 );
-const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
 
+//Mediana de salarios
+function Onclick_Mediana(){
+    const medianaGeneralCuba = medianaSalarios(salariosCubaSorted);
+    const resultMediana = document.getElementById("Mediana");
+    resultMediana.innerText = "La mediana es: " + medianaGeneralCuba;
+}
 //Media aritmetica
-var salarioPromedio = calcularMediaAritmetica(salariosCuba);
+function Onclick_Promedio(){
+    var salarioPromedio = Math.round(calcularMediaAritmetica(salariosCuba)) ;
+    const resultPromedio = document.getElementById("Promedio");
+    resultPromedio.innerText = "El promedio es: " + salarioPromedio;
+}
 
 //Mediana del top 10% salarios mas altos
 const spliceStart = Math.round(salariosCubaSorted.length * 0.9);
 const spliceCount = salariosCuba.length - spliceStart;
-
 const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
-
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
+
 //Creando de nuevo la lista de salarios, debido a que el metodo splice lo modifica
 var salariosCubaDeNuevo = cubita.map(
     function (persona){
             return persona.salary;
         }
-    );
-//Ordenar lalista de salarios
+);
+//Ordenar la lista de salarios
 var salariosCubaDeNuevo = salariosCubaDeNuevo.sort(
     function(salaryA, salaryB){
         return salaryA - salaryB;
