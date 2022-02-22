@@ -106,7 +106,6 @@ const spliceCount = salariosCuba.length - spliceStart;
 const salariosCubaTop10 = salariosCubaSorted.splice(spliceStart, spliceCount);
 
 const medianaTop10Cuba = medianaSalarios(salariosCubaTop10);
-
 //Creando de nuevo la lista de salarios, debido a que el metodo splice lo modifica
 var salariosCubaDeNuevo = cubita.map(
     function (persona){
@@ -128,3 +127,4 @@ const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(-salariosCubaDeNuevo.le
 console.log("El 10 porciento de los salarios mas altos es: " + salariosCubaTop10);
 console.log("El salario promedio es: " + Math.round(salarioPromedio) );
 console.log("El 10 porciento de los salarios mas bajos es: " + top_10_Salarios_Bajos);
+console.log("La mediana de los salarios mas altos es: " + medianaTop10Cuba);
