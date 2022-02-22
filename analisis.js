@@ -119,15 +119,12 @@ var salariosCubaDeNuevo = salariosCubaDeNuevo.sort(
         return salaryA - salaryB;
     }
 );
-console.log("Salarios: "+ salariosCubaDeNuevo);
     
 //Top 10% de salararios mas bajos
-const spliceSalariosCubaDeNuevo_Start = Math.round(salariosCubaDeNuevo.length * 0.1);
-const spliceSalariosCubaDeNuevo_Cont = salariosCubaDeNuevo.length - spliceSalariosCubaDeNuevo_Start;
-const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(spliceSalariosCubaDeNuevo_Start, spliceSalariosCubaDeNuevo_Cont);
+const spliceSalariosCubaDeNuevo_Count = Math.round(salariosCubaDeNuevo.length * 0.1);
 
+const top_10_Salarios_Bajos = salariosCubaDeNuevo.splice(0,spliceSalariosCubaDeNuevo_Count);
 
-console.log(spliceSalariosCubaDeNuevo_Start);
 console.log("El 10 porciento de los salarios mas altos es: " + salariosCubaTop10);
 console.log("El salario promedio es: " + Math.round(salarioPromedio) );
-console.log("El 10 porciento de los slarios mas bajos es: " + top_10_Salarios_Bajos);
+console.log("El 10 porciento de los salarios mas bajos es: " + top_10_Salarios_Bajos);
