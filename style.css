@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: "header header header"
+                         "main main main"
+                         "footer footer footer";
+}
+header{
+    grid-area: header;
+    background-color: antiquewhite;
+}
+main{
+    grid-area: main;
+    background-color: aqua;
+    display: grid;
+}
+footer{
+    grid-area: footer;
+    background-color: bisque;
+}
